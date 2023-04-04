@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 /*
 NOMBRE MODULO: NUMEROS FIBBINARIOS
-FECHA DE CREACIÓN: 29-3-2023
-FECHA DE MODIFICACIÓN:
-FUNCIÓN: IDENTIFICAR CUANDO UN NUMERO TIENE 2 1S CONCECUTIVOS, EN DICHO CASO ENTREGARA UN 0 COMO SALIDA
+FECHA DE CREACIÃ“N: 29-3-2023
+FECHA DE MODIFICACIÃ“N:
+FUNCIÃ“N: IDENTIFICAR CUANDO UN NUMERO TIENE 2 1S CONCECUTIVOS, EN DICHO CASO ENTREGARA UN 0 COMO SALIDA
 */
 
 module Nro_fibbinario(
@@ -30,7 +30,7 @@ module Nro_fibbinario(
     output logic F
     );
     
-    assign F = (!A && !C) || (!B && !C) || (!B && !D); 
+    assign F = (!A && !C) || (!B && !C) || (!B && !D); // esto dada la funcion f de la guia
 endmodule    
     
    
