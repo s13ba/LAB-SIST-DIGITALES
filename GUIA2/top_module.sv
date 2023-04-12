@@ -24,10 +24,10 @@ FECHA DE CREACION:07-04-2023
 FECHA DE MODIFICACION: 
 FUNCION: modulo que contiene sub-modulos, que permiten tomar la cuenta del counter y representarlo en el display*/
 
-module top_module();
+module top_module(
     input logic clk, reset, ON, //entradas (van al counter) y señal de on.off
     output logic fib, sevenSeg // salidas (desde elBCD_to_sevenseg y del fibb_rec)
-    
+    );
     //se necesita establecer variables internas que van desde un modulo a otro
     logic [3:0]count; //(salida del contador y entradas a fibb_rec y bcd to 7seg)
     
@@ -44,8 +44,7 @@ module top_module();
         .BCD_in(count),
         .fib(fib));
     
-    logic invsevenSeg;
-    logic invfib; // necesitamos invertir 7seg debido a como funciona el display
+   // necesitamos invertir 7seg debido a como funciona el display
     always_comb begin 
         case(ON)
         1'b1 : invsevenSeg = ~sevenSeg;
