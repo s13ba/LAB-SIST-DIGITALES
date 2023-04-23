@@ -33,7 +33,7 @@ module clock_divider_2
 	input  logic reset,
 	output logic clk_out );
     
-    localparam COUNTER_MAX = (frec_base*10**6)/(2*frec_salida*10**6);
+    localparam COUNTER_MAX = (frec_base)/(2*frec_salida);
 	localparam DELAY_WIDTH = $clog2(COUNTER_MAX);
 	logic [DELAY_WIDTH-1:0] counter = 'd0, counter_next;
 	logic clk_out_next;
@@ -61,7 +61,7 @@ module clock_divider_2
 	 end
 
 	/*L?gica Secuencial*/
-	always_ff@(posedge frec_base)
+	always_ff@(posedge clk_in)
 	begin
 		counter <= counter_next;
 		clk_out <= clk_out_next;
