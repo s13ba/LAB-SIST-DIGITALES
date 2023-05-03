@@ -24,6 +24,7 @@ module test_ACT1();
     logic [31:0]HEX_in;
     logic clock;
     logic reset;
+    
     logic [6:0]segments;
     logic [7:0]anodes;
     
@@ -39,11 +40,18 @@ module test_ACT1();
     initial begin 
         clock = 0;
         reset = 1;
-        HEX_in = 32'h69;
+       
+        HEX_in = 32'h12345678;
         #15
         reset = 0;
-        #50
+        #500
         reset = 1;
+        
+        #30
+        reset =0;
+        
+        #20
+        reset =1;
         #20
         reset =0;
    end
